@@ -1,0 +1,32 @@
+{
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "reference_pairs": [
+    "workflow.md",
+    "estimation.md",
+    "teaching-and-review.md",
+    "registers.md"
+  ],
+  "template_files": [
+    "01-understanding.md",
+    "02-requirements.md",
+    "03-architecture.md",
+    "04-estimation.md",
+    "05-validation-handoff.md",
+    "06-decisions-changes.md",
+    "07-retrospective.md",
+    "README.md",
+    "AGENTS.md",
+    ".gitignore"
+  ],
+  "commands": [
+    "init",
+    "demo",
+    "index",
+    "check",
+    "estimate",
+    "report"
+  ]
+}

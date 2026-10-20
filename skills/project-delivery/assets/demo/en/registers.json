@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "currency": "CNY",
+  "hours_per_person_day": 8,
+  "cost_rates": {},
+  "sources": [
+    {
+      "id": "S0001",
+      "title": "Written brief",
+      "path": "inbox/01-request.txt",
+      "read_status": "read",
+      "origin_group": "brief",
+      "authority": "customer_written_requirement",
+      "coverage": "Entire synthetic text"
+    },
+    {
+      "id": "S0002",
+      "title": "AI meeting summary",
+      "path": "inbox/02-ai-notes.txt",
+      "read_status": "read",
+      "origin_group": "meeting-A",
+      "authority": "ai_summary_unconfirmed",
+      "coverage": "Entire synthetic text"
+    },
+    {
+      "id": "S0003",
+      "title": "Buyer clarification",
+      "path": "inbox/03-chat.txt",
+      "read_status": "read",
+      "origin_group": "buyer-chat",
+      "authority": "customer_message",
+      "coverage": "Entire synthetic text"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R001",
+      "title": "Two-template import and approved export",
+      "source_ids": [
+        "S0001",
+        "S0003"
+      ],
+      "source_locator": "Full text; synthetic example",
+      "claim_type": "documented",
+      "deliverable": "Two-template import and approved export",
+      "acceptance_ids": [
+        "A001"
+      ],
+      "question_ids": []
+    },
+    {
+      "id": "R002",
+      "title": "Human review; no payment execution",
+      "source_ids": [
+        "S0001",
+        "S0003"
+      ],
+      "source_locator": "Full text; synthetic example",
+      "claim_type": "documented",
+      "deliverable": "Human review; no payment execution",
+      "acceptance_ids": [
+        "A002"
+      ],
+      "question_ids": []
+    },
+    {
+      "id": "R003",
+      "title": "Resolve deployment permission",
+      "source_ids": [
+        "S0001",
+        "S0002"
+      ],
+      "source_locator": "Full text; synthetic example",
+      "claim_type": "conflicting",
+      "deliverable": "Resolve deployment permission",
+      "acceptance_ids": [
+        "A003"
+      ],
+      "question_ids": [
+        "Q001"
+      ]
+    },
+    {
+      "id": "R004",
+      "title": "Evaluate OCR on representative samples",
+      "source_ids": [
+        "S0001",
+        "S0003"
+      ],
+      "source_locator": "Full text; synthetic example",
+      "claim_type": "inferred",
+      "deliverable": "Evaluate OCR on representative samples",
+      "acceptance_ids": [
+        "A004"
+      ],
+      "question_ids": [
+        "Q002"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "A001",
+      "requirement_ids": [
+        "R001"
+      ],
+      "criterion": "Two-template import and approved export",
+      "dataset": "Agreed test set, awaiting customer material",
+      "environment": "Customer-approved test environment, to confirm",
+      "method": "Business review with recorded results",
+      "threshold": "Proposed criterion requiring business agreement; not committed",
+      "status": "pending",
+      "evidence_ids": []
+    },
+    {
+      "id": "A002",
+      "requirement_ids": [
+        "R002"
+      ],
+      "criterion": "Human review; no payment execution",
+      "dataset": "Agreed test set, awaiting customer material",
+      "environment": "Customer-approved test environment, to confirm",
+      "method": "Business review with recorded results",
+      "threshold": "Proposed criterion requiring business agreement; not committed",
+      "status": "pending",
+      "evidence_ids": []
+    },
+    {
+      "id": "A003",
+      "requirement_ids": [
+        "R003"
+      ],
+      "criterion": "Resolve deployment permission",
+      "dataset": "Agreed test set, awaiting customer material",
+      "environment": "Customer-approved test environment, to confirm",
+      "method": "Business review with recorded results",
+      "threshold": "Proposed criterion requiring business agreement; not committed",
+      "status": "pending",
+      "evidence_ids": []
+    },
+    {
+      "id": "A004",
+      "requirement_ids": [
+        "R004"
+      ],
+      "criterion": "Evaluate OCR on representative samples",
+      "dataset": "Agreed test set, awaiting customer material",
+      "environment": "Customer-approved test environment, to confirm",
+      "method": "Business review with recorded results",
+      "threshold": "Proposed criterion requiring business agreement; not committed",
+      "status": "pending",
+      "evidence_ids": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "W001",
+      "title": "Scope and rules",
+      "requirement_ids": [
+        "R001",
+        "R002"
+      ],
+      "deliverable": "Scope and rules",
+      "role": "analyst",
+      "depends_on": [],
+      "days": {
+        "optimistic": 1,
+        "likely": 2,
+        "pessimistic": 3
+      },
+      "basis": "Synthetic effort for arithmetic demonstration; not a project benchmark",
+      "done_when": "Agreed output can be checked; this demo does not implement the business system"
+    },
+    {
+      "id": "W002",
+      "title": "Import and validate",
+      "requirement_ids": [
+        "R001"
+      ],
+      "deliverable": "Import and validate",
+      "role": "engineer",
+      "depends_on": [
+        "W001"
+      ],
+      "days": {
+        "optimistic": 2,
+        "likely": 3,
+        "pessimistic": 5
+      },
+      "basis": "Synthetic effort for arithmetic demonstration; not a project benchmark",
+      "done_when": "Agreed output can be checked; this demo does not implement the business system"
+    },
+    {
+      "id": "W003",
+      "title": "OCR feasibility",
+      "requirement_ids": [
+        "R004"
+      ],
+      "deliverable": "OCR feasibility",
+      "role": "engineer",
+      "depends_on": [
+        "W001"
+      ],
+      "days": {
+        "optimistic": 1,
+        "likely": 2,
+        "pessimistic": 4
+      },
+      "basis": "Synthetic effort for arithmetic demonstration; not a project benchmark",
+      "done_when": "Agreed output can be checked; this demo does not implement the business system"
+    },
+    {
+      "id": "W004",
+      "title": "Review and export",
+      "requirement_ids": [
+        "R002"
+      ],
+      "deliverable": "Review and export",
+      "role": "engineer",
+      "depends_on": [
+        "W002"
+      ],
+      "days": {
+        "optimistic": 2,
+        "likely": 3,
+        "pessimistic": 5
+      },
+      "basis": "Synthetic effort for arithmetic demonstration; not a project benchmark",
+      "done_when": "Agreed output can be checked; this demo does not implement the business system"
+    },
+    {
+      "id": "W005",
+      "title": "Scenario verification",
+      "requirement_ids": [
+        "R001",
+        "R002",
+        "R004"
+      ],
+      "deliverable": "Scenario verification",
+      "role": "qa",
+      "depends_on": [
+        "W003",
+        "W004"
+      ],
+      "days": {
+        "optimistic": 1,
+        "likely": 2,
+        "pessimistic": 4
+      },
+      "basis": "Synthetic effort for arithmetic demonstration; not a project benchmark",
+      "done_when": "Agreed output can be checked; this demo does not implement the business system"
+    },
+    {
+      "id": "W006",
+      "title": "Deployment decision",
+      "requirement_ids": [
+        "R003"
+      ],
+      "deliverable": "Deployment decision",
+      "role": "architect",
+      "depends_on": [
+        "W001"
+      ],
+      "days": {
+        "optimistic": 0.5,
+        "likely": 1,
+        "pessimistic": 2
+      },
+      "basis": "Synthetic effort for arithmetic demonstration; not a project benchmark",
+      "done_when": "Agreed output can be checked; this demo does not implement the business system"
+    }
+  ],
+  "evidence": [],
+  "questions": [
+    {
+      "id": "Q001",
+      "question": "Who resolves the deployment-permission conflict?",
+      "source_ids": [
+        "S0001",
+        "S0002"
+      ],
+      "impact": "Changes architecture and cost",
+      "owner": "Customer IT / 客户IT",
+      "status": "open",
+      "blocking": true
+    },
+    {
+      "id": "Q002",
+      "question": "Provide representative images and scoring rules",
+      "source_ids": [
+        "S0003"
+      ],
+      "impact": "OCR quality remains unverified",
+      "owner": "Customer business owner / 客户业务负责人",
+      "status": "open",
+      "blocking": true
+    }
+  ],
+  "risks": [],
+  "decisions": [],
+  "changes": []
+}
